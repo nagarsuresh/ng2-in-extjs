@@ -1,0 +1,32 @@
+.auto_complete_list{
+    box-shadow: 5px 5px 10px #aaa;
+}
+.auto_complete_list_item{
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.auto_complete_list_item.selected,
+.auto_complete_list_item:hover{
+    z-index: 2;
+    color: #fff;
+    font-weight: bold;
+    background-color: #0275d8;
+    border-color: #0275d8;    
+}
