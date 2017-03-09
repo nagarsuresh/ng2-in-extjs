@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular2 hosted in ExtJS App</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script data-require="rxjs@*" data-semver="5.1.1" src="https://unpkg.com/rxjs@5.1.1/bundles/Rx.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all-debug.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/resources/theme-triton-all-debug.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/theme-triton-debug.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/charts-debug.js"></script>
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/classic/resources/charts-all-debug.css">
+    <link rel="stylesheet" href="ext-src/style.css">
+
+    <script type="text/javascript" src="ext-src/app/Main.js?">
+
+    </script>
+
+
+  <script>
+    var globalObservable = new Rx.Subject();
+
+    function onBodyLoad() {
+      Rx.Observable.fromEvent(document.querySelectorAll('button'), 'click').map(event => event.target.id).subscribe(id => globalObservable.next(id))
+    }
+  </script>
+
+</head>
+
+<body onload="onBodyLoad()">
+  <app-main></app-main>
+<script type="text/javascript" src="inline.bundle.js"></script><script type="text/javascript" src="polyfills.bundle.js"></script><script type="text/javascript" src="scripts.bundle.js"></script><script type="text/javascript" src="styles.bundle.js"></script><script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="main.bundle.js"></script></body>
+
+</html>

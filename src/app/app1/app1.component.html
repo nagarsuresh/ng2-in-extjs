@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="card">
+    <div class="card-block">
+      <div class="card-title">Module 1 of Angular2 App
+        <span style="float: right">
+          <button (click)="increment()" class="btn btn-primary">Increment</button> State : {{state}}
+        </span>
+
+      </div>
+
+      <div style="clear: both">
+        <h4>Clarity Grid</h4>
+        <clr-datagrid>
+          <clr-dg-column>Rule Name</clr-dg-column>
+          <clr-dg-column>Source</clr-dg-column>
+          <clr-dg-column>Destination</clr-dg-column>
+          <clr-dg-column>Enabled</clr-dg-column>
+
+          <clr-dg-row *ngFor="let rule of rules">
+            <clr-dg-cell>{{rule.name}}</clr-dg-cell>
+            <clr-dg-cell>{{rule.source}}</clr-dg-cell>
+            <clr-dg-cell>{{rule.destination}}</clr-dg-cell>
+            <clr-dg-cell>
+              <div class="toggle-switch">
+                <input type="checkbox" id="{{rule.name}}" [checked]="rule.enabled">
+                <label for="{{rule.name}}"></label>
+              </div>
+            </clr-dg-cell>
+          </clr-dg-row>
+
+          <clr-dg-footer>{{rules.length}} Rules</clr-dg-footer>
+        </clr-datagrid>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
